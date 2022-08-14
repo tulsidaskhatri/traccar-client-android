@@ -14,7 +14,7 @@ class Constants {
         const val KEY_STATUS = "status"
         const val KEY_BUFFER = "buffer"
         const val KEY_WAKELOCK = "wakelock"
-        private const val PERMISSIONS_REQUEST_LOCATION = 2
-        private const val PERMISSIONS_REQUEST_BACKGROUND_LOCATION = 3
+        const val PERMISSIONS_REQUEST_LOCATION = 2
+        const val PERMISSIONS_REQUEST_BACKGROUND_LOCATION = 3
     }
 }
