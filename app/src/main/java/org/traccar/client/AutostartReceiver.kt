@@ -18,6 +18,7 @@ package org.traccar.client
 import android.content.Context
 import android.content.Intent
 import androidx.preference.PreferenceManager
+import org.traccar.sdk.TrackingService
 
 class AutostartReceiver : WakefulBroadcastReceiver() {
 

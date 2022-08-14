@@ -65,12 +65,12 @@
         </activity>
 
         <service
-            android:name=".TrackingService"
+            android:name="org.traccar.sdk.TrackingService"
             android:exported="false"
             android:foregroundServiceType="location" />
 
         <service
-            android:name=".TrackingService$HideNotificationService"
+            android:name="org.traccar.sdk.TrackingService$HideNotificationService"
             android:exported="false" />
 
         <receiver
