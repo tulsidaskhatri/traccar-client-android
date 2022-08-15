@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.core.content.ContextCompat
 import org.traccar.sdk.Constants
@@ -16,6 +17,10 @@ class MainActivity3 : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
         val startButton = findViewById<Button>(R.id.startButton)
         val stopButton = findViewById<Button>(R.id.stopButton)
+        val initButton = findViewById<Button>(R.id.initButton)
+        val getDeviceIDButton = findViewById<Button>(R.id.getDeviceIDButton)
+
+
         startButton.setOnClickListener {
             Root.startTrackingService(this, this, true, false)
 
@@ -24,6 +29,21 @@ class MainActivity3 : AppCompatActivity() {
 
             Root.stopTrackingService(this)
         }
+
+        initButton.setOnClickListener {
+            Root.init(this)
+        }
+
+        getDeviceIDButton.setOnClickListener {
+            val deviceId = Root.getDeviceKey(this);
+            if (deviceId != null) {
+                Log.d("DeviceShow",deviceId )
+            } else {
+                Log.d("DeviceShow", "No device to show")
+            }
+        }
+
+
 
     }
 
