@@ -12,7 +12,11 @@ import android.os.Build
 import androidx.core.content.ContentProviderCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.preference.EditTextPreference
+import androidx.preference.PreferenceManager
 import androidx.preference.TwoStatePreference
+import java.util.*
+import kotlin.collections.HashSet
 
 class Root {
     companion object {
@@ -65,6 +69,24 @@ class Root {
 //            }
             activity.stopService(Intent(activity, TrackingService::class.java))
 //            setPreferencesEnabled(true)
+        }
+
+        fun init(activity: Activity){
+            val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
+            if (!sharedPreferences.contains(Constants.KEY_DEVICE)) {
+                val id = (Random().nextInt(900000) + 100000).toString()
+                sharedPreferences.edit().putString(Constants.KEY_DEVICE, id).apply()
+            }
+        }
+
+        fun getDeviceKey(activity: Activity): String? {
+            val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
+            return sharedPreferences.getString(Constants.KEY_DEVICE, "undefined")
+        }
+
+        fun setDeviceKey(activity: Activity, id: String) {
+            val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
+            sharedPreferences.edit().putString(Constants.KEY_DEVICE, id).apply()
         }
     }
 
