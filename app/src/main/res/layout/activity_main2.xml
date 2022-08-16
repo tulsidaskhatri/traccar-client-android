@@ -41,4 +41,13 @@
         android:text="Get Device ID"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/initButton" />
+
+    <Button
+        android:id="@+id/updateDeviceIDButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Set Device ID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/getDeviceIDButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

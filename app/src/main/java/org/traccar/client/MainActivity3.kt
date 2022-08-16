@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import org.traccar.sdk.Constants
 import org.traccar.sdk.Root
 import org.traccar.sdk.TrackingService
+import kotlin.random.Random
 
 class MainActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,7 @@ class MainActivity3 : AppCompatActivity() {
         val stopButton = findViewById<Button>(R.id.stopButton)
         val initButton = findViewById<Button>(R.id.initButton)
         val getDeviceIDButton = findViewById<Button>(R.id.getDeviceIDButton)
+        val updateDeviceIDButton = findViewById<Button>(R.id.updateDeviceIDButton)
 
 
         startButton.setOnClickListener {
@@ -41,6 +43,10 @@ class MainActivity3 : AppCompatActivity() {
             } else {
                 Log.d("DeviceShow", "No device to show")
             }
+        }
+
+        updateDeviceIDButton.setOnClickListener {
+            Root.setDeviceKey(this, (java.util.Random().nextInt(900000) + 100000).toString())
         }
 
 
