@@ -1,16 +1,12 @@
 package org.traccar.client
 
-import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import androidx.core.content.ContextCompat
 import org.traccar.sdk.Constants
 import org.traccar.sdk.Root
-import org.traccar.sdk.TrackingService
-import kotlin.random.Random
 
 class MainActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -34,7 +34,6 @@ import org.traccar.client.PositionProvider.PositionListener
 import org.traccar.client.ProtocolFormatter.formatRequest
 import org.traccar.client.RequestManager.RequestHandler
 import org.traccar.client.RequestManager.sendRequestAsync
-import org.traccar.sdk.TrackingService
 
 class ShortcutActivity : AppCompatActivity() {
 
